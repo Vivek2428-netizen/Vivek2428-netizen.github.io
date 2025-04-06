@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Menu</title>
+
+    <style>
+              /* ===== Animation Enhancements ===== */
+        header {
+            position: sticky;
+            top: 0;
+            animation: headerSlide 0.5s ease-out;
+            box-shadow: 0 4px 20px rgba(255, 0, 0, 0.1);
+        }
+
+        .menu-section {
+            animation: sectionEntry 0.6s forwards;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .menu-item {
+            transition: all 0.3s ease;
+        }
+
+        .menu-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .image-container {
+            transition: transform 0.3s ease;
+            box-shadow: 0 8px 25px rgba(255, 0, 0, 0.1);
+        }
+
+        .item-name {
+            transition: all 0.3s ease;
+        }
+
+        @keyframes headerSlide {
+            from { transform: translateY(-100%); }
+            to { transform: translateY(0); }
+        }
+
+        @keyframes sectionEntry {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .menu-section:nth-child(1) { animation-delay: 0.2s; }
+        .menu-section:nth-child(2) { animation-delay: 0.4s; }
+        .menu-section:nth-child(3) { animation-delay: 0.6s; }
+        .menu-section:nth-child(4) { animation-delay: 0.8s; } 
+ /* Import Google Font */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+        /* General Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: black;
+            text-align: center;
+        }
+
+        /* Header */
+        header {
+            background:black;
+            color:red;
+            padding: 15px;
+            font-size: 24px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        /* Menu Container */
+        .menu-container {
+            width: 90%;
+            margin: auto;
+        }
+
+        /* Section Styling */
+        .menu-section {
+            background: black;
+            padding: 20px 0;
+            margin: 20px 0;
+        }
+
+        /* Grid Layout */
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); /* 4 items per row */
+            gap: 20px;
+        }
+
+        /* Image Container - Increased Size */
+        .image-container {
+            width: 100%;
+            height: 350px; /* Increased height */
+            overflow: hidden;
+            border-radius: 20px; /* Smooth rounded border */
+        }
+
+        /* Image Fit */
+        .menu-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 20px; /* Same rounded corners */
+            transition: transform 0.3s ease-in-out;
+        }
+
+        /* Hover Zoom Effect */
+        .menu-item:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Item Name */
+        .item-name {
+            font-size: 20px; /* Slightly larger font */
+            font-weight: bold;
+            color: red;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .menu-grid {
+                grid-template-columns: repeat(2, 1fr); /* 2 items per row */
+            }
+        }
+
+        @media (max-width: 600px) {
+            .menu-grid {
+                grid-template-columns: repeat(1, 1fr); /* 1 item per row */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        Our Special Menu
+    </header>
+
+
+    <div class="menu-container">
+
+        <!-- Starters Section -->
+        <section class="menu-section">
+           <h2 style="color: red; text-align: center;">STARTERS</h2>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <div class="image-container">
+                        <img src="https://myfoodstory.com/wp-content/uploads/2021/05/Chicken-65-Spicy-Crispy-3.jpg" alt="Paneer Tikka">
+                    </div>
+                    <p class="item-name"> chicken 65 - ₹250</p>
+                </div>
+                <div class="menu-item">
+                    <div class="image-container">
+                        <img src="https://www.jinooskitchen.com/wp-content/uploads/2018/07/mutton-sukka-final.jpg" alt="Chicken 65">
+                    </div>
+                    <p class="item-name">Mutton Sukka - ₹380</p>
+                </div>
+                <div class="menu-item">
+                    <div class="image-container">
+                        <img src="https://www.savoryandsweetfood.com/wp-content/uploads/2018/11/IMG_5462-680x1024.jpg" alt="Spring Rolls">
+                    </div>
+                    <p class="item-name">Prawn Varuval - ₹320</p>
+                </div>
+                <div class="menu-item">
+                    <div class="image-container">
+                        <img src="https://i.ytimg.com/vi/PWpRQhjGkRc/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLC-zqx60xYlVxYYnXUB6QrPEz6Yng" alt="Crispy Corn">
+                    </div>
+                    <p class="item-name">Egg podimas - ₹200</p>
+                </div>
+ <div class="menu-item">
+                    <div class="image-container">
+                        <img src="https://www.yummytummyaarthi.com/wp-content/uploads/2016/07/1-56.jpg" alt="Crispy Corn">
+                    </div>
+                    <p class="item-name">Fish Fry (Meen Varuval) - ₹310</p>
+                </div>
+ <div class="menu-item">
+                    <div class="image-container">
+                        <img src="https://img-cdn.thepublive.com/fit-in/1200x675/filters:format(webp)/sanjeev-kapoor/media/post_banners/49d21a360321814829832bb5a121995a218c1605571c16b3ee9b7c8b07041719.jpg" alt="Crispy Corn">
+                    </div>
+                    <p class="item-name">Crispy Corn - ₹200</p>
+                </div>
+ <div class="menu-item">
+                    <div class="image-container">
+                        <img src="https://www.wcrf.org/wp-content/uploads/2024/08/Chicken-Satay-Skewers-SQ.jpg" alt="Crispy Corn">
+                    </div>
+                    <p class="item-name">Satay Skewers - ₹300</p>
+                </div>
+ <div class="menu-item">
+                    <div class="image-container">
+                        <img src="https://redhousespice.com/wp-content/uploads/2021/12/whole-spring-rolls-and-halved-ones-scaled.jpg" alt="Crispy Corn">
+                    </div>
+                    <p class="item-name">Spring Rolls - ₹270</p>
+                </div>
+ <div class="menu-item">
+                    <div class="image-container">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOotyWGPgLDTQEABLsM7fnJMhxXaLjR59mHQ&s" alt="Crispy Corn">
+                    </div>
+                    <p class="item-name">Ulli Pakoda - ₹280</p>
+                </div>
+ <div class="menu-item">
+                    <div class="image-container">
+                        <img src="https://www.thevellorekitchen.in/wp-content/uploads/2023/01/Chicken-Varuval.jpg" alt="Crispy Corn">
+                    </div>
+                    <p class="item-name">Chicken Varuval - ₹300</p>
+                </div>
+ <div class="menu-item">
+                    <div class="image-container">
+                        <img src="https://flavoursofmykitchen.com/wp-content/uploads/2023/03/MG_0021-tn-scaled.jpg" alt="Crispy Corn">
+                    </div>
+                    <p class="item-name">Chettand Prawn - ₹310</p>
+                </div>
+ <div class="menu-item">
+                    <div class="image-container">
+                        <img src="https://static.toiimg.com/thumb/58342144.cms?width=1200&height=900" alt="Crispy Corn">
+                    </div>
+                    <p class="item-name">Egg Bajji - ₹230</p>
+                </div>
+ <div class="menu-item">
+                    <div class="image-container">
+                        <img src="https://luv4foodntravel.com/wp-content/uploads/2020/11/DSC00170-1.jpg" alt="Crispy Corn">
+                    </div>
+                    <p class="item-name">Kozhi Milagu Varuval - ₹320</p>
+                </div>
+ <div class="menu-item">
+                    <div class="image-container">
+                        <img src="https://mariasmenu.com/wp-content/uploads/Prawns-Sukka-300x250-1.png" alt="Crispy Corn">
+                    </div>
+                    <p class="item-name">mangalorean prawn sukka- ₹300</p>
+                </div>
+ <div class="menu-item">
+                    <div class="image-container">
+                        <img src="https://myfoodstory.com/wp-content/uploads/2016/02/spicy-chettinad-pepper-chicken-fryroast-recipe.1024x1024-1.jpg" alt="Crispy Corn">
+                    </div>
+                    <p class="item-name">Chettinad Chicken Fry - ₹350</p>
+                </div>
+ <div class="menu-item">
+                    <div class="image-container">
+                        <img src="https://i.ytimg.com/vi/Ilnuk3ZsjXQ/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLBSkyvBoZDehtE7TXYjvLs4VODZ4g" alt="Crispy Corn">
+                    </div>
+                    <p class="item-name">Mutton Brain Fry (Bheja Fry) - ₹310</p>
+                </div>
+                <!-- Add 11 more items -->
+            </div>
+        </section>
+
+        <!-- Grilled Delights Section -->
+        <section class="menu-section">
+            <h2 style="color: red; text-align: center;">Grilled Delights</h2>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <div class="image-container">
+                        <img src="https://www.yummytummyaarthi.com/wp-content/uploads/2015/11/1-54.jpg" alt="Tandoori Chicken">
+                    </div>
+                    <p class="item-name">Spicy Grilled Chicken - ₹350</p>
+                </div>
+
+                <div class="menu-item">
+                    <div class="image-container">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQY0dtuGiPhd3bowXxrbe9OyigH-M76VDV0nA&s" alt="Tandoori Chicken">
+                    </div>
+                    <p class="item-name">grilled full tandoori chicken ₹390</p>
+                </div>
+               <div class="menu-item">
+                    <div class="image-container">
+                        <img src="https://cookingwithbliss.com/wp-content/uploads/2022/03/bbq-chicken-1200-1-1.jpg" alt="Tandoori Chicken">
+                    </div>
+                    <p class="item-name">Charcoal Roasted Chicken Wings ₹340</p>
+                </div>
+          <div class="menu-item">
+                    <div class="image-container">
+                        <img src="https://lifeloveandgoodfood.com/wp-content/uploads/2023/07/Chicken-Kabobs-21-1200x1800-1.jpg" alt="Tandoori Chicken">
+                    </div>
+                    <p class="item-name">Spiced Mutton Chops ₹490</p>
+                </div>
+<div class="menu-item">
+                    <div class="image-container">
+                        <img src="https://www.seriouseats.com/thmb/CWhFbz-Y-wuCyeKUGgsMkl5Mavc=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/__opt__aboutcom__coeus__resources__content_migration__serious_eats__seriouseats.com__images__2016__08__20160801-seekh-kebab-recipe-43-dc241907b08f4aa8ae92492ddc32dcd8.jpg" alt="Tandoori Chicken">
+                    </div>
+                    <p class="item-name">Grilled Mutton Seekh Kebab ₹490</p>
+                </div>
+<div class="menu-item">
+                    <div class="image-container">
+                        <img src="https://www.spiceindiaonline.com/wp-content/uploads/2021/09/Mutton-Pepper-Fry-2.jpg" alt="Tandoori Chicken">
+                    </div>
+                    <p class="item-name">Black Pepper Mutton Roast ₹480</p>
+                </div>
+<div class="menu-item">
+                    <div class="image-container">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeHF54-vdD6-KpMWYyPW4LWfW6DvnkjuX1wA&s" alt="Tandoori Chicken">
+                    </div>
+                    <p class="item-name">Herb-Crusted Lamb Skewers ₹500</p>
+                </div>
+<div class="menu-item">
+                    <div class="image-container">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9cz8VVTk84XfmQqNSngcfuSCDOvJ-xFdjFQ&s" alt="Tandoori Chicken">
+                    </div>
+                    <p class="item-name">Slow-Cooked Smoky Mutton Tikka ₹490</p>
+                </div>
+<div class="menu-item">
+                    <div class="image-container">
+                        <img src="https://vegbuffet.com/wp-content/uploads/2024/07/tawa-paneer-tikka-recipe.jpg" alt="Tandoori Chicken">
+                    </div>
+                    <p class="item-name">Paneer Tikka ₹290</p>
+                </div>
+<div class="menu-item">
+                    <div class="image-container">
+                        <img src="https://www.licious.in/blog/wp-content/uploads/2020/12/Tandoori-Fish.jpg" alt="Tandoori Chicken">
+                    </div>
+                    <p class="item-name">Tandoori Grilled Fish Steak ₹450</p>
+                </div>
+            
+                <!-- Add 15 more items -->
+            </div>
+        </section>
+
+         <!-- Biryanis Section -->
+        <section class="menu-section">
+         <h2 style="color: red; text-align: center;">Biryani Specials</h2>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <div class="image-container">
+                        <img src="https://vismaifood.com/storage/app/uploads/public/e12/7b7/127/thumb__1200_0_0_0_auto.jpg" alt="Hyderabadi Biryani">
+                    </div>
+                    <p class="item-name">Dum Biryani  ₹400</p>
+                </div>
+<div class="menu-item">
+                    <div class="image-container">
+                        <img src="https://b.zmtcdn.com/data/pictures/chains/7/19202577/649d8234db52accedb7d878cd5c3a3c2.jpg" alt="Hyderabadi Biryani">
+                    </div>
+                    <p class="item-name">Donne Biryani ₹430</p>
+                </div>
+<div class="menu-item">
+                    <div class="image-container">
+                        <img src="https://yellowchilis.com/wp-content/uploads/2020/12/ambur-special-chicken-biryani-star-biryani.jpg" alt="Hyderabadi Biryani">
+                    </div>
+                    <p class="item-name">Ambur Biryani ₹440</p>
+                </div>
+<div class="menu-item">
+                    <div class="image-container">
+                        <img src="https://www.shanazrafiq.com/wp-content/uploads/2016/04/DSC_0114.jpg" alt="Hyderabadi Biryani">
+                    </div>
+                    <p class="item-name">Thalassery Biryani ₹410</p>
+                </div>
+<div class="menu-item">
+                    <div class="image-container">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7ExG1P1fIr66hif9BZQUkE3W8pX5mYodWZg&s" alt="Hyderabadi Biryani">
+                    </div>
+                    <p class="item-name">chettinad biryani ₹450</p>
+                </div>
+<div class="menu-item">
+                    <div class="image-container">
+                        <img src="https://nishkitchen.com/wp-content/uploads/2015/03/Beef-Biryani-1B-500x500.jpg" alt="Hyderabadi Biryani">
+                    </div>
+                    <p class="item-name">Beef Biryani ₹530</p>
+                </div>
+<div class="menu-item">
+                    <div class="image-container">
+                        <img src="https://untoldrecipesbynosheen.com/wp-content/uploads/2021/03/mutton-biryani-featured.jpg" alt="Hyderabadi Biryani">
+                    </div>
+                    <p class="item-name">Mutton Biryani ₹540</p>
+                </div>
+<div class="menu-item">
+                    <div class="image-container">
+                        <img src="https://spicecravings.com/wp-content/uploads/2020/10/Egg-Biryani-Featured-1.jpg" alt="Hyderabadi Biryani">
+                    </div>
+                    <p class="item-name">Egg Biryani ₹300</p>
+                </div>
+<div class="menu-item">
+                    <div class="image-container">
+                        <img src="https://images.slurrp.com/prod/recipe_images/transcribe/main%20course/Prawn-Biryani.webp" alt="Hyderabadi Biryani">
+                    </div>
+                    <p class="item-name">Prawn Biryani ₹480</p>
+                </div>
+<div class="menu-item">
+                    <div class="image-container">
+                        <img src="https://onestophalal.com/cdn/shop/articles/fish_biryani-1701906057159_1200x.jpg?v=1701906108" alt="Hyderabadi Biryani">
+                    </div>
+                    <p class="item-name">Fish Biryani ₹490</p>
+                </div>
+<div class="menu-item">
+                    <div class="image-container">
+                        <img src="https://sinfullyspicy.com/wp-content/uploads/2023/10/1200-by-1200-images-5.jpg" alt="Hyderabadi Biryani">
+                    </div>
+                    <p class="item-name">Paneer Biryani ₹380</p>
+                </div>
+<div class="menu-item">
+                    <div class="image-container">
+                        <img src="https://www.archanaskitchen.com//images/archanaskitchen/Indian_Rice/Peppery_Mushroom_Biryani_Recipe-1.jpg" alt="Hyderabadi Biryani">
+                    </div>
+                    <p class="item-name">Mushroom Biryani ₹420</p>
+                </div>
+<div class="menu-item">
+                    <div class="image-container">
+                        <img src="https://i.ytimg.com/vi/Do7ZdUodDdw/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLAEQctXy1aD1723HT7omylxjn4tMQ" alt="Hyderabadi Biryani">
+                    </div>
+                    <p class="item-name">veg biryani  ₹420</p>
+                </div>
+<div class="menu-item">
+                    <div class="image-container">
+                        <img src="https://www.recipesaresimple.com/wp-content/uploads/2018/10/malabar-special-dum-chicken-biryani.jpg" alt="Hyderabadi Biryani">
+                    </div>
+                    <p class="item-name">Malabar Biryani ₹450</p>
+                </div>
+                <!-- Add 15 more items -->
+            </div>
+        </section>
+
+        <!-- Desserts Section -->
+        <section class="menu-section">
+         <h2 style="color: red; text-align: center;">Deserts</h2>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <div class="image-container">
+                        <img src="https://theartisticcook.com/wp-content/uploads/2024/10/Gulab-Jamun-with-Milk-Powder.jpg" alt="Gulab Jamun">
+                    </div>
+                    <p class="item-name">Gulab Jamun ₹150</p>
+                </div>
+ <div class="menu-item">
+                    <div class="image-container">
+                        <img src="https://i.pinimg.com/736x/f5/f8/42/f5f842cb91597146df97a40f962fa699.jpg" alt="Gulab Jamun">
+                    </div>
+                    <p class="item-name">Rasmalai  ₹170</p>
+                </div>
+ <div class="menu-item">
+                    <div class="image-container">
+                        <img src="https://morbiwalasweets.com/cdn/shop/files/2_4e953c90-5b63-4c0f-a8f1-3e939bed376a.png?v=1689370263" alt="Gulab Jamun">
+                    </div>
+                    <p class="item-name">Ice Halwa ₹190</p>
+                </div>
+ <div class="menu-item">
+                    <div class="image-container">
+                        <img src="https://kannanskitchen.com/wp-content/uploads/2021/04/DSC_4658.jpg" alt="Gulab Jamun">
+                    </div>
+                    <p class="item-name">Pista Kulfi ₹200</p>
+                </div>
+ <div class="menu-item">
+                    <div class="image-container">
+                        <img src="https://www.saveur.com/uploads/2019/02/08/RSQCZRUP32T6N4BOZJSCSQHTCI.jpg?auto=webp" alt="Gulab Jamun">
+                    </div>
+                    <p class="item-name">Gelato ₹220</p>
+                </div>
+ <div class="menu-item">
+                    <div class="image-container">
+                        <img src="https://wheelofbaking.com/wp-content/uploads/strawberry-sorbet-21.jpg" alt="Gulab Jamun">
+                    </div>
+                    <p class="item-name">StrawberrySorbet ₹250</p>
+                </div>
+ <div class="menu-item">
+                    <div class="image-container">
+                        <img src="https://static01.nyt.com/images/2024/04/15/multimedia/DG-Baked-Alaska-zjbf/DG-Baked-Alaska-zjbf-mediumSquareAt3X.jpg" alt="Gulab Jamun">
+                    </div>
+                    <p class="item-name">Baked Alaska ₹270</p>
+                </div>
+ <div class="menu-item">
+                    <div class="image-container">
+                        <img src="https://www.keep-calm-and-eat-ice-cream.com/wp-content/uploads/2022/08/Ice-cream-sundae-hero-11.jpg" alt="Gulab Jamun">
+                    </div>
+                    <p class="item-name"> ₹280</p>
+                </div>
+ <div class="menu-item">
+                    <div class="image-container">
+                        <img src="https://i.pinimg.com/736x/7b/07/ab/7b07ab00579092a32f6466570917b0d2.jpg" alt="Gulab Jamun">
+                    </div>
+                    <p class="item-name">Affogato ₹350</p>
+                </div>
+ <div class="menu-item">
+                    <div class="image-container">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5JzOXL_B-xD4wekbZ1avwV-0uvRkf6i6bvw&s" alt="Gulab Jamun">
+                    </div>
+                    <p class="item-name">Fruit Tart ₹350</p>
+                </div>
+ <div class="menu-item">
+                    <div class="image-container">
+                        <img src="https://staticcookist.akamaized.net/wp-content/uploads/sites/22/2024/09/THUMB-VIDEO-2_rev1-56.jpeg?im=Resize,width=742;" alt="Gulab Jamun">
+                    </div>
+                    <p class="item-name">Tiramisu ₹380</p>
+                </div>
+ <div class="menu-item">
+                    <div class="image-container">
+                        <img src="https://www.allrecipes.com/thmb/gDJ1S6ETLfWGyyWw_4A_IGhvDYE=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/9295_red-velvet-cake_ddmfs_4x3_1129-a8ab17b825e3464a9a53ceeda54ff461.jpg" alt="Gulab Jamun">
+                    </div>
+                    <p class="item-name">Red Velvet Cake ₹370</p>
+                </div>
+                <!-- Add 15 more items -->
+            </div>
+        </section>
+
+        <!-- Beverages Section -->
+        <section class="menu-section">
+            <h2 style="color: red; text-align: center;">Beverages</h2>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <div class="image-container">
+                        <img src="https://www.pcrm.org/sites/default/files/Fantastic-Fruit-Smoothie.jpeg" alt="Mango Shake">
+                    </div>
+                    <p class="item-name"> smoothie ₹100</p>
+                </div>
+ <div class="menu-item">
+                    <div class="image-container">
+                        <img src="https://www.simplyrecipes.com/thmb/HFX_f0EoI5WnyAXbXutzjrY49Y8=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/Simply-Recipes-Mango-Lassi-LEAD-08-9b45bb7d7d6d45a79deee3013f2f3cf1.jpg" alt="Mango Shake">
+                    </div>
+                    <p class="item-name">Mango Lassi ₹100</p>
+                </div>
+ <div class="menu-item">
+                    <div class="image-container">
+                        <img src="https://cdn.loveandlemons.com/wp-content/uploads/2020/07/mojito.jpg" alt="Mango Shake">
+                    </div>
+                    <p class="item-name">Mojito ₹100</p>
+                </div>
+ <div class="menu-item">
+                    <div class="image-container">
+                        <img src="https://mixthatdrink.com/wp-content/uploads/2023/03/classic-margarita-cocktail-720x720.jpg" alt="Mango Shake">
+                    </div>
+                    <p class="item-name">Margarita ₹100</p>
+                </div>
+ <div class="menu-item">
+                    <div class="image-container">
+                        <img src="https://img-global.cpcdn.com/recipes/fdf19688189d8b26/120x170cq50/ice-apple-rose-cooler-tadgola-rose-sharbat-recipe-main-photo.jpg" alt="Mango Shake">
+                    </div>
+                    <p class="item-name">Ice Apple Cooler (Nungu Juice) ₹100</p>
+                </div>
+ <div class="menu-item">
+                    <div class="image-container">
+                        <img src="https://mfjllp.com/wp-content/uploads/2023/10/DSC05819-min-scaled-1-1-1-e1697534172334-1.jpg" alt="Mango Shake">
+                    </div>
+                    <p class="item-name">Jigarthanda ₹100</p>
+                </div>
+ <div class="menu-item">
+                    <div class="image-container">
+                        <img src="https://img-global.cpcdn.com/recipes/5f4eaa310525f0f5/1200x630cq70/photo.jpg" alt="Mango Shake">
+                    </div>
+                    <p class="item-name">Musk Melon Juice ₹100</p>
+                </div>
+ <div class="menu-item">
+                    <div class="image-container">
+                        <img src="https://www.mygingergarlickitchen.com/wp-content/rich-markup-images/4x3/4x3-falooda-recipe.jpg" alt="Mango Shake">
+                    </div>
+                    <p class="item-name">Falooda ₹100</p>
+                </div>
+ <div class="menu-item">
+                    <div class="image-container">
+                        <img src="https://i0.wp.com/cookingfromheart.com/wp-content/uploads/2020/10/Pazharasam-5.jpg?resize=720%2C960&ssl=1" alt="Mango Shake">
+                    </div>
+                    <p class="item-name">fruit mixer juice ₹100</p>
+                </div>
+ <div class="menu-item">
+                    <div class="image-container">
+                        <img src="https://www.spiceupthecurry.com/wp-content/uploads/2023/04/rose-milk-recipe-3.jpg" alt="Mango Shake">
+                    </div>
+                    <p class="item-name">Rose Milk ₹100</p>
+                </div>
+ <div class="menu-item">
+                    <div class="image-container">
+                        <img src="https://images.stockcake.com/public/6/c/7/6c700625-55b8-412e-8b6d-41b1826663d7_large/pomegranate-juice-glass-stockcake.jpg" alt="Mango Shake">
+                    </div>
+                    <p class="item-name">Pomegranate Juice ₹100</p>
+                </div>
+ <div class="menu-item">
+                    <div class="image-container">
+                        <img src="https://ichef.bbci.co.uk/food/ic/food_16x9_1600/recipes/watermelon_cooler_57906_16x9.jpg" alt="Mango Shake">
+                    </div>
+                    <p class="item-name">Watermelon Juice ₹100</p>
+                </div>
+
+                <!-- Add 15 more items -->
+            </div>
+        </section>
+
+    </div>
+
+</body>
+</html>

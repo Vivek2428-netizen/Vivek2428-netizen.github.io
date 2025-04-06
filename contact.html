@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - The Deccan Table</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #000;
+            color: #fff;
+        }
+
+        .header {
+            background-color: #000;
+            color: #ff0000;
+            text-align: center;
+            padding: 4rem 2rem;
+            border-bottom: 2px solid #ff0000;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            background: #1a1a1a;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 0 25px rgba(255, 0, 0, 0.1);
+        }
+
+        .contact-details {
+            padding-right: 2rem;
+        }
+
+        .contact-item {
+            margin: 1.5rem 0;
+            padding: 1.5rem;
+            background: #262626;
+            border-radius: 8px;
+            border-left: 4px solid #ff0000;
+            transition: transform 0.3s ease;
+        }
+
+        .contact-item:hover {
+            transform: translateX(10px);
+        }
+
+        .contact-item h3 {
+            color: #ff0000;
+            margin-bottom: 0.5rem;
+            font-size: 1.2em;
+        }
+
+        .business-hours {
+            background: #1a1a1a;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 8px;
+            border: 1px solid #ff0000;
+        }
+
+        .business-hours h3 {
+            color: #ff0000;
+            margin-bottom: 1rem;
+        }
+
+        a {
+            color: #ff4444;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #ff0000;
+            text-decoration: underline;
+        }
+
+        .map-container {
+            height: 100%;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 2px solid #ff0000;
+            box-shadow: 0 0 15px rgba(255, 0, 0, 0.2);
+        }
+
+        .google-map {
+            width: 100%;
+            height: 100%;
+            min-height: 400px;
+            border: 0;
+        }
+
+        .footer {
+            background: #000;
+            color: #ff0000;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+            border-top: 2px solid #ff0000;
+        }
+
+        .social-links {
+            margin: 1rem 0;
+        }
+
+        .social-links a {
+            color: #ff0000;
+            margin: 0 1rem;
+            font-size: 1.2em;
+        }
+
+        @media (max-width: 768px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .google-map {
+                min-height: 300px;
+            }
+            
+            .contact-details {
+                padding-right: 0;
+            }
+        }
+    </style>
+    <!-- Add Poppins Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <h1>Contact The Deccan Table</h1>
+        <p>We'd love to hear from you!</p>
+    </header>
+
+    <div class="container">
+        <div class="contact-grid">
+            <div class="contact-details">
+                <div class="contact-item">
+                    <h3>📍 Location</h3>
+                    <p>123 Food Street, Hyderabad, India</p>
+                </div>
+
+                <div class="contact-item">
+                    <h3>📞 Phone</h3>
+                    <p><a href="tel:+911234567890">+91 123 456 7890</a></p>
+                </div>
+
+                <div class="contact-item">
+                    <h3>✉️ Email</h3>
+                    <p><a href="mailto:info@thedeccantable.com">info@thedeccantable.com</a></p>
+                </div>
+
+                <div class="business-hours">
+                    <h3>🕒 Opening Hours</h3>
+                    <p>Monday - Sunday: 10:00 AM - 11:00 PM</p>
+                    <p class="highlight">Special Holidays: 12:00 PM - 10:00 PM</p>
+                </div>
+            </div>
+
+            <div class="map-container">
+                <iframe class="google-map"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.3142923817854!2d78.48673931533586!3d17.447950505029484!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb9158f201b205%3A0x27c10d3eb6d619c!2sHyderabad%2C%20Telangana!5e0!3m2!1sen!2sin!4v1624445436783!5m2!1sen!2sin" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="social-links">
+            <a href="https://facebook.com" target="_blank">Facebook</a>
+            <a href="https://instagram.com" target="_blank">Instagram</a>
+            <a href="https://twitter.com" target="_blank">Twitter</a>
+        </div>
+        <p>© 2024 The Deccan Table. All rights reserved.</p>
+    </footer>
+</body>
+</html>

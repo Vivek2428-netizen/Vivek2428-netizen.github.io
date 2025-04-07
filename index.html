@@ -1,0 +1,1109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>THE DECCAN TABLE</title>
+
+
+  <!-- ===== CSS Reset & Basic Styles ===== -->
+  <style>
+   /* 🔥 Reset Default Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* 🔥 Header & Hero Section - Same Background */
+/* 🧱 Fix header layout */
+header {
+    background: transparent; /* optional overlay handled separately */
+    color: red;
+    padding: 15px 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap; /* important for wrapping content on small screens */
+    gap: 15px;
+}
+
+/* 🧠 Make logo flexible */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: nowrap;
+    max-width: 100%;
+}
+
+.logo img {
+    height: 30px; /* increase for visibility */
+    width: auto;
+}
+
+.logo h2 {
+    font-size: 1.5rem;
+    color: red;
+    white-space: nowrap;
+}
+
+/* 🧭 Nav style - adjust for small screens */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li a {
+    font-size: 16px;
+    color: red;
+    text-decoration: none;
+    padding: 8px 12px;
+    display: inline-block;
+}
+
+nav ul li a:hover {
+    color: #ff8800;
+}
+
+/* 📱 RESPONSIVE: Fix layout for phones */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .logo {
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .logo img {
+        height: 40px;
+    }
+
+    .logo h2 {
+        font-size: 1.3rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    nav ul li a {
+        font-size: 18px;
+        padding: 6px 10px;
+    }
+}
+
+}
+nav ul li a:hover {
+    color: #ff8800;
+}
+
+/* 🔥 Hero Section */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: calc(100vh - 80px);
+    padding: 0 10%;
+    position: relative;
+}
+
+/* ====== Text Styling Improvements ====== */
+.hero-content {
+    width: 1000%;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 25px; /* Increased spacing */
+}
+
+.hero-content h1 {
+    font-size: 3.5rem; /* 56px */
+    color: #fff; /* White for better contrast */
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-family: 'Playfair Display', serif; /* Add Google Font later */
+}
+
+.hero-content h1 .highlight {
+    color: #ff4444; /* Brighter red accent */
+    display: block; /* For line break effect */
+}
+
+.hero-content p {
+    font-size: 1.25rem; /* 20px */
+    color: red; /* Off-white for readability */
+    line-height: 1.6;
+    max-width: 80%;
+    margin: 0 auto;
+    font-weight: 300;
+}
+
+
+
+/* 🍽️ Rotating Plate Image */
+.hero-image {
+    width: 250%;
+    display: flex;
+    justify-content: flex-end;
+ align-items: flex-end; /* Moves image to the bottom */
+    padding-bottom: 0.5px; /* Adjust the value to move it further down */
+}
+.hero-image img {
+    max-width: 500px;
+    height: auto;
+    border-radius: 1px;
+    animation: rotatePlate 15s linear infinite; /* Rotate Effect */
+}
+
+/* 🔄 Rotating Animation */
+@keyframes rotatePlate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* 📱 Responsive Design */
+@media (max-width: 1024px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+    .hero-content {
+        max-width: 80%;
+    }
+    .hero-image {
+        justify-content: center;
+    }
+    .hero-image img {
+        max-width: 50px;
+    }
+}
+/* Fixing container width issues */
+.hero-content {
+    width: 100%; /* was 1000% 😱 */
+    max-width: 800px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Responsiveness for smaller screens */
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        padding: 40px 20px;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .hero-content {
+        text-align: center;
+        max-width: 100%;
+    }
+
+    .hero-image {
+        margin-top: 30px;
+        justify-content: center;
+    }
+
+    .hero-image img {
+        max-width: 250px;
+        height: auto;
+    }
+}
+
+/* Optional: Add a dark transparent overlay over the image background */
+.header-hero-container::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5); /* dark overlay */
+    z-index: 1;
+}
+
+/* Make sure content is above the overlay */
+header, .hero {
+    position: relative;
+    z-index: 2;
+}
+
+
+
+/* Reservation Section */
+.reservation-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: black;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* Left Side - Order Online */
+.reservation-text {
+    flex: 1;
+    padding: 30px;
+    text-align: left;
+}
+
+.reservation-text h2 {
+    font-size: 2rem;
+    color: red;
+}
+
+.reservation-text p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    color:white;
+}
+
+.buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.order-btn {
+    background-color: red;
+    color: white;
+}
+
+.order-btn:hover {
+    background-color: #444;
+}
+
+/* Right Side - Reservation Form */
+.reservation-form {
+    flex: 1;
+    background-color:black;
+    padding: 30px;
+    border-radius: 0 10px 10px 0;
+    text-align: center;
+}
+
+.reservation-form h3 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: red;
+}
+
+.reservation-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.reservation-form input {
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.submit-btn {
+    background-color: red;
+    color: white;
+    cursor: pointer;
+}
+
+.submit-btn:hover {
+    background-color: #444;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .reservation-section {
+        flex-direction: column;
+    }
+    .reservation-form {
+        border-radius: 10px;
+    }
+}
+
+/* 🌎 Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: orange;
+    color: orange;
+    text-align: center;
+}
+/* 📸 Enhanced Gallery Section */
+.gallery-section {
+    padding: 4rem 1rem;
+    background-color:black;
+}
+
+.section-title {
+    text-align: center;
+    color: orange;
+    font-size: 2.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.gallery-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    justify-content: center;
+}
+
+.gallery-item {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    aspect-ratio: 1/1; /* Perfect square ratio */
+}
+
+.image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* 🔍 Enhanced Hover Effect */
+.gallery-item:hover img {
+    transform: scale(1.15);
+    filter: brightness(1.05);
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr));
+        gap: 15px;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+}
+/* Reviews Section */
+.reviews-section {
+    background: black;
+    padding: 60px 40px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.section-title {
+    text-align: center;
+    color: red;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+}
+
+.reviews-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+/* Neon Glow Effect */
+.review-box {
+    flex: 1;
+    background-color: black;
+    color: red;
+    padding: 30px;
+    margin: 10px;
+    border-radius: 10px;
+    text-align: center;
+   box-shadow: 0 0 15px rgba(255, 165, 0, 0.5);
+border: 2px solid rgba(255, 165, 0, 0.7);
+transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.review-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(255, 165, 0, 0.8);
+}
+
+/* Star Ratings */
+.stars {
+    font-size: 2rem;
+    color: red;
+    margin-bottom: 10px;
+}
+
+/* Review Text */
+.review-text {
+    font-size: 1.2rem;
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+/* Reviewer Name */
+.reviewer {
+    font-weight: bold;
+    color: red;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .reviews-container {
+        flex-direction: column;
+    }
+    
+    .review-box {
+        width: 90%;
+        margin: 10px auto;
+    }
+
+    .section-title {
+        font-size: 2rem;
+        margin-bottom: 30px;
+    }
+}
+
+    /* ====== Footer Section ====== */
+    /* Footer Styling */
+footer {
+    background-color: black;
+    color: red;
+    text-align: center;
+    padding: 30px 10px;
+    font-family: Arial, sans-serif;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 200px;
+    margin: 10px;
+}
+
+.footer-section h3 {
+    color: red;
+    margin-bottom: 10px;
+}
+
+.footer-section p, .footer-section a {
+    color: #ddd;
+    text-decoration: none;
+    font-size: 14px;
+    display: block;
+    margin: 5px 0;
+}
+
+.footer-section a:hover {
+    color: #ffcc00;
+}
+
+.footer-bottom {
+    width: 100%;
+    margin-top: 20px;
+    border-top: 1px solid #444;
+    padding-top: 10px;
+}
+
+.footer-bottom a {
+    color: #bbb;
+    margin: 0 10px;
+}
+
+.footer-bottom a:hover {
+    color: #ffcc00;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+
+    /* ====== Modal (for example “About” popup) ====== */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      display: none; /* hidden by default */
+      justify-content: center;
+      align-items: center;
+      z-index: 999;
+    }
+    .modal {
+      background: #fff;
+      color: #222;
+      padding: 2rem;
+      border-radius: 10px;
+      max-width: 600px;
+      width: 90%;
+      text-align: center;
+      position: relative;
+    }
+    .modal h2 {
+      margin-bottom: 1rem;
+    }
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      font-size: 1.5rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
+      .menu-section {
+        flex-direction: column;
+      }
+      .meat-fish {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .meat-fish .vertical-text {
+        writing-mode: horizontal-tb;
+        transform: rotate(0);
+        margin: 1rem 0;
+      }
+    }
+  </style>
+</head>
+
+ <body> 
+
+<!-- ====== Header ====== -->
+  <div class="header-hero-container">
+        <!-- 🔥 Header -->
+        <header>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+            <div class="logo">
+                <img src="wmremove-transformed (1) (1).png" alt="The Deccan Table"> 
+                <h2>The Deccan Table</h2>
+            </div>
+            <nav>
+                <ul>
+                   
+                    <li><a href="men.html">Menu</a></li>
+                    <li><a href="aboutus.html">AboutUS</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="FAQ.html">FAQs</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <section class="hero">
+            <div class="hero-content">
+                <h1>The Deccan Table</h1>
+                <p>Delicious, fresh, and family-owned since 1940. Taste the difference in every bite!</p>
+            </div>
+
+            <!-- 🍽️ Rotating Plate Image -->
+            <div class="hero-image">
+                <img src="rotating.png" alt="Rotating Biryani Plate">
+            </div>
+        </section>
+    </div>
+
+</body>
+
+
+
+
+    <title>Menu Highlights</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: black;
+            color: #222;
+            scroll-behavior: smooth;
+        }
+        .menu-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: red;
+            margin: 50px 0;
+            font-weight: bold;
+        }
+        .menu-section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 20px;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .menu-section.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .menu-text {
+            flex: 1;
+            padding: 20px;
+        }
+        .menu-text h2 {
+            font-size: 2rem;
+            color: red;
+            margin-bottom: 10px;
+        }
+        .menu-text p {
+            font-size: 1rem;
+            line-height: 2;
+        }
+        .menu-images {
+            flex: 1;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+        .menu-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+        .menu-item img {
+            width: 260px;
+            height: 190px;
+            object-fit: cover;
+            transition: 0.3s ease-in-out;
+            border-radius: 8px;
+        }
+        .menu-item:hover img {
+            filter: brightness(1.5);
+        }
+        .menu-item .menu-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 10px 15px;
+            border-radius: 5px;
+            opacity: 0;
+            transition: 0.3s ease-in-out;
+        }
+        .menu-item:hover .menu-overlay {
+            opacity: 1;
+        }
+        .menu-button {
+            display: block;
+            text-align: center;
+            margin: 30px auto;
+            padding: 12px 15px;
+            font-size: 18px;
+            background-color: red;
+            color: black;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: 0.3s ease-in-out;
+            width: 200px;
+        }
+        .menu-button:hover {
+            background-color: #444;
+        }
+        @media (max-width: 768px) {
+            .menu-section {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+p{
+color:white;
+}
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const sections = document.querySelectorAll(".menu-section");
+            const revealSections = () => {
+                sections.forEach(section => {
+                    const sectionTop = section.getBoundingClientRect().top;
+                    if (sectionTop < window.innerHeight - 100) {
+                        section.classList.add("show");
+                    }
+                });
+            };
+            revealSections();
+            window.addEventListener("scroll", revealSections);
+        });
+    </script>
+</head>
+<body>
+
+    <h1 class="menu-title">🍽 Menu Highlights</h1>
+
+    <!-- Starters (Text Left, Images Right) -->
+    <div class="menu-section">
+        <div class="menu-text">
+            <h2>🥢 Starters</h2>
+            <p> Kickstart your culinary journey with our mouthwatering appetizers! From crispy, golden-brown delights to sizzling, flavor-packed bites, our starters set the perfect tone for an unforgettable meal. Whether you crave something spicy, tangy, or smoky, we have the perfect dish to awaken your taste buds.
+
+Delicious appetizers to start your meal with a burst of flavors.</p>
+        </div>
+        <div class="menu-images">
+            <div class="menu-item">
+                <img src="https://www.krumpli.co.uk/wp-content/uploads/2021/03/Chicken-Tikka-Kebab-3-720x720.jpg" alt="Chicken Tikka">
+                <div class="menu-overlay">Chicken Tikka</div>
+            </div>
+            <div class="menu-item">
+                <img src="https://i0.wp.com/binjalsvegkitchen.com/wp-content/uploads/2016/09/Paneer-Tikka-H1.jpg?ssl=1" alt="Paneer Tikka">
+                <div class="menu-overlay">Paneer Tikka</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Biryani Specials (Text Right, Images Left) -->
+    <div class="menu-section">
+        <div class="menu-images">
+            <div class="menu-item">
+                <img src="https://media-assets.swiggy.com/swiggy/image/upload/f_auto,q_auto,fl_lossy/d6hurstexsssq8ds0py7" alt="Hyderabadi Biryani">
+                <div class="menu-overlay">Hyderabadi Biryani</div>
+            </div>
+            <div class="menu-item">
+                <img src="https://hokparty.in/wp-content/uploads/2024/11/hyderabadi-mutton-biryani.png" alt="Mutton Biryani">
+                <div class="menu-overlay">Mutton Biryani</div>
+            </div>
+        </div>
+        <div class="menu-text">
+            <h2>🔥 Biryani Specials</h2>
+            <p>Experience the true essence of Hyderabadi royalty with our signature biryanis. Slow-cooked to perfection with fragrant basmati rice, rich spices, and tender meat, every bite is a burst of authentic flavors. Choose from classic Chicken Biryani, aromatic Mutton Biryani, or the delightful Vegetable Biryani—each crafted with love and tradition.
+
+Authentic, flavorful biryanis made with premium ingredients.</p>
+        </div>
+    </div>
+
+    <!-- Grilled Delights (Text Left, Images Right) -->
+    <div class="menu-section">
+        <div class="menu-text">
+            <h2>🍖 Grilled Delights</h2>
+            <p>Savor the smoky, charred perfection of our expertly grilled dishes. From succulent Seekh Kebabs to juicy Tandoori Chicken, our grilled specialties bring out the best in flavors with a perfect balance of spices and tenderness. Whether you prefer seafood, chicken, or lamb, our grilled delights promise a feast for all meat lovers!Perfectly grilled meats with rich, smoky flavors.</p>
+        </div>
+        <div class="menu-images">
+            <div class="menu-item">
+                <img src="https://static01.nyt.com/images/2019/09/25/dining/aw-lamb-kebabs/aw-lamb-kebabs-master768.jpg?quality=75&auto=webp" alt="Seekh Kebab">
+                <div class="menu-overlay">Seekh Kebab</div>
+            </div>
+            <div class="menu-item">
+                <img src="https://i.ytimg.com/vi/1LtXG6CQmZc/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLCbMu7GyfwSnB6RykccN6eacF_b8w" alt="Grilled Fish">
+                <div class="menu-overlay">Grilled Fish</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Desserts (Text Right, Images Left) -->
+    <div class="menu-section">
+        <div class="menu-images">
+            <div class="menu-item">
+                <img src="https://theartisticcook.com/wp-content/uploads/2024/10/Gulab-Jamun-with-Milk-Powder.jpg" alt="Gulab Jamun">
+                <div class="menu-overlay">Gulab Jamun</div>
+            </div>
+            <div class="menu-item">
+                <img src="https://www.nuaodisha.com/Receipe/Double-ka-Meetha-1-Double-ka-meetha.jpg" alt="Double Ka Meetha">
+                <div class="menu-overlay">Double Ka Meetha</div>
+            </div>
+        </div>
+        <div class="menu-text">
+            <h2>🍰 Desserts</h2>
+            <p>Indulge in sweet bliss with our handcrafted desserts! Whether it’s the rich, syrupy Gulab Jamun, the creamy Double Ka Meetha, or the chilled Phirni, each dessert is a delightful way to end your meal on a high note. A perfect treat for those who love a little sweetness in life!
+
+Sweet treats to satisfy your cravings.</p>
+        </div>
+    </div>
+
+    <!-- Beverages (Text Left, Images Right) -->
+    <div class="menu-section">
+        <div class="menu-text">
+            <h2>🥤 Beverages</h2>
+            <p>Quench your thirst with our refreshing selection of beverages. From the classic Irani Chai and Lassi to our special Rose Sherbet, our drinks complement every dish, cooling your palate while enhancing the flavors of your meal. Sip, relax, and enjoy the taste of tradition!aRefreshing drinks to complement your meal.</p>
+        </div>
+        <div class="menu-images">
+            <div class="menu-item">
+                <img src="https://themagicsaucepan.com/wp-content/uploads/2018/05/20180511-salt-lassi-0061-500x375.jpg" alt="Lassi">
+                <div class="menu-overlay">Lassi</div>
+            </div>
+            <div class="menu-item">
+                <img src="https://thehealthfulideas.com/wp-content/uploads/2024/10/Cranberry-Mocktail-SQUARE2.jpg" alt="cranberry mocktail">
+                <div class="menu-overlay">cranberry mocktail </div>
+            </div>
+        </div>
+    </div>
+
+    <a href="men.html" class="menu-button" >📜 View Full Menu</a>
+
+
+ <section class="reservation-section">
+        <div class="reservation-text">
+            <h2>Order Online & Table Reservations</h2>
+            <p>Enjoy our delicious food from the comfort of your home or reserve a table for a perfect dine-in experience.</p>
+            
+            <div class="buttons">
+                <a href="https://www.swiggy.com/" target="_parent" class="btn order-btn">Order on Swiggy</a>
+                <a href="https://www.zomato.com/" target="_parent" class="btn order-btn">Order on Zomato</a>
+                
+            </div>
+        </div>
+<div class="reservation-form">
+    <h3>Reserve a Table</h3>
+    <form action="#" method="POST">
+        <input type="text" placeholder="Full Name" required>
+        <input type="email" placeholder="Email Address" required>
+        <input type="tel" placeholder="Phone Number" required>
+        <input type="date" required>
+        <input type="time" required>
+        <input type="number" placeholder="Number of Guests" required min="1">
+        <textarea placeholder="Additional Message (e.g., special requests, dietary preferences)" rows="4"></textarea>
+        <a href="reserve.html" class="btn submit-btn" role="button">
+  Book Now
+</a>
+    </form>
+</div>
+
+    </section>
+ <!-- 🌟 Gallery Section -->
+<section class="gallery-section">
+    <h2 class="section-title">Ambience of The Deccan Table</h2>
+    <div class="gallery-container">
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <div class="image-wrapper">
+                    <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/09/2b/95/9c/open-range-steakhouse.jpg?w=900&h=-1&s=1" alt="Restaurant Interior">
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="image-wrapper">
+                    <img src="https://i.pinimg.com/736x/d4/7b/31/d47b312a62877ff2219cda35d4ca0192.jpg" alt="Dining Area">
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="image-wrapper">
+                    <img src="https://i.pinimg.com/736x/79/ca/fc/79cafc55c5ea4a6aa6b33ed216bfedfb.jpg" alt="Specialty Dish">
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="image-wrapper">
+                    <img src="https://i.pinimg.com/736x/59/16/31/59163142a230555c7b6ab973e7162871.jpg" alt="Kitchen View">
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="image-wrapper">
+                    <img src="https://i.pinimg.com/736x/55/3c/b8/553cb8f581543600ee04382487d2347f.jpg" alt="Outdoor Seating">
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="image-wrapper">
+                    <img src="https://i.pinimg.com/736x/89/66/41/8966411577b8a2f41aaa2d6c97b1c351.jpg" alt="Event Space">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="reviews-section">
+    
+     <h2 style="color: orange;">What Our Customers Say?</h2>
+    <div class="reviews-container">
+        <div class="review-box">
+            <p class="stars">⭐⭐⭐⭐⭐</p>
+            <p class="review-text">"The best biryani I've ever had! The flavors were incredible, and the ambiance was perfect!"</p>
+            <p class="reviewer">- Rahul Sharma</p>
+        </div>
+
+        <div class="review-box">
+            <p class="stars">⭐⭐⭐⭐</p>
+            <p class="review-text">"Amazing food and great hospitality. The Deccan Table never disappoints!"</p>
+            <p class="reviewer">- Ananya Patel</p>
+        </div>
+
+        <div class="review-box">
+            <p class="stars">⭐⭐⭐⭐</p>
+            <p class="review-text">"A perfect place for a family dinner. The biryani was hot, fresh, and full of authentic flavors!"</p>
+            <p class="reviewer">- Mohammed Ali</p>
+        </div>
+    </div>
+</section>
+</body>
+</html>
+</body>
+</html>
+
+    <footer>
+        <div class="footer-container">
+
+ 
+     <div class="footer-container">
+            
+            <!-- Address & Contact Info -->
+            <div class="footer-section">
+                <h3>The Deccan Table</h3>
+                <p>📍 <a href="https://goo.gl/maps/example" target="_parent">123 Food Street, Hyderabad, India</a></p>
+                <p>📞 <a href="tel:+911234567890">+91 123 456 7890</a></p>
+                <p>✉️ <a href="mailto:info@thedeccantable.com">info@thedeccantable.com</a></p>
+            </div>
+
+            <!-- Business Hours -->
+            <div class="footer-section">
+                <h3>Business Hours</h3>
+                <p>🕒 Mon - Sun: 10:00 AM - 11:00 PM</p>
+                <p>🎉 Special Holiday Hours: 12:00 PM - 10:00 PM</p>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="men.html">Menu</a></li>
+                    <li><a href="aboutus.html">AboutUS</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="FAQ.html">FAQs</a></li>
+                </ul>
+            </div>
+
+      <div class="footer-section">
+    <h3>Follow Us</h3>
+    <a href="https://www.facebook.com" target="_parent">
+        <i class="fab fa-facebook-f"></i> Facebook
+    </a>
+    <a href="https://www.instagram.com" target="_parent">
+        <i class="fab fa-instagram"></i> Instagram
+    </a>
+    <a href="https://www.twitter.com" target="_parent">
+        <i class="fab fa-twitter"></i> Twitter
+    </a>
+</div>
+
+       <!-- Online Ordering -->
+<div class="footer-section">
+    <h3>Order Online</h3>
+    <div class="order-links">
+        <a href="https://www.swiggy.com" target="_parent">
+            <ion-icon name="fast-food-outline"></ion-icon> Swiggy
+        </a>
+        <a href="https://www.zomato.com" target="_parent">
+            <ion-icon name="restaurant-outline"></ion-icon> Zomato
+        </a>
+        <a href="https://www.ubereats.com" target="_parent">
+            <ion-icon name="car-outline"></ion-icon> UberEats
+        </a>
+    </div>
+</div>
+
+    </div>
+
+            <!-- Legal Links & Copyright -->
+            <div class="footer-bottom">
+                <a href="#">Privacy Policy</a> | 
+                <a href="#">Terms & Conditions</a>
+                <p>© 2025 The Deccan Table. All rights reserved.</p>
+            </div>
+
+        </div>
+    </footer>
+
+</body>
+</html>
+
+       
+
+  <!-- ====== Modal for About Section ====== -->
+  <div id="aboutModal" class="modal-overlay">
+    <div class="modal">
+      <button class="close-btn" onclick="closeModal()">&times;</button>
+      <h2>About Our Restaurant</h2>
+      <p>
+        Founded in the 1940s, our restaurant continues a tradition of excellence in taste
+        and quality. We believe in supporting local farmers and delivering a truly
+        homemade experience to our customers.
+      </p>
+    </div>
+  </div>
+
+  <!-- ====== JavaScript ====== -->
+  <script>
+    const aboutModal = document.getElementById("aboutModal");
+
+    function openModal() {
+      aboutModal.style.display = "flex";
+    }
+    function closeModal() {
+      aboutModal.style.display = "none";
+    }
+    // Optional: Close modal on overlay click
+    aboutModal.addEventListener("click", (e) => {
+      if (e.target === aboutModal) {
+        closeModal();
+      }
+    });
+ 
+
+ </script>
+</body>
+</html>
